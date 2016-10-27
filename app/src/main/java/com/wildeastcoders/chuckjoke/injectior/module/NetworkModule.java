@@ -6,8 +6,6 @@ import com.wildeastcoders.chuckjoke.injectior.scope.PerApplication;
 import com.wildeastcoders.chuckjoke.repositoty.Repository;
 import com.wildeastcoders.chuckjoke.repositoty.RepositoryImpl;
 
-import javax.inject.Singleton;
-
 import dagger.Module;
 import dagger.Provides;
 import retrofit2.Retrofit;

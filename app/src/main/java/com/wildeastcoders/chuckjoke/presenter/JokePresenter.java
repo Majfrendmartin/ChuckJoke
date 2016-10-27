@@ -1,5 +1,7 @@
 package com.wildeastcoders.chuckjoke.presenter;
 
+import android.text.TextUtils;
+
 import com.wildeastcoders.chuckjoke.model.Joke;
 import com.wildeastcoders.chuckjoke.usecase.FetchJokeUsecase;
 import com.wildeastcoders.chuckjoke.view.JokeView;
@@ -52,6 +54,10 @@ public class JokePresenter implements Presenter<JokeView> {
     }
 
     public void onGenerateJokeButtonClicked(String name, String surname) {
+        if (TextUtils.isEmpty(name) && TextUtils.isEmpty(surname)) {
+            name = "Chuck";
+            surname = "Norris";
+        }
         jokeView.showLoading();
         fetchJokeUsecase.init(name, surname);
         getJokeSubscription = fetchJokeUsecase.execute()

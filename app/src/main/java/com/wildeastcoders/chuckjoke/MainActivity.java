@@ -8,6 +8,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.wildeastcoders.chuckjoke.injectior.component.AppComponent;
+import com.wildeastcoders.chuckjoke.injectior.component.DaggerJokeComponent;
 import com.wildeastcoders.chuckjoke.injectior.module.JokeModule;
 import com.wildeastcoders.chuckjoke.model.Joke;
 import com.wildeastcoders.chuckjoke.presenter.JokePresenter;
@@ -48,8 +49,8 @@ public class MainActivity extends AppCompatActivity implements JokeView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-//        DaggerJokeComponent.builder().jokeModule(new JokeModule()).build().inject(this);
-        ChuckJokeApplication.getInstance().getAppComponent().inject(this);
+        AppComponent appComponent = ChuckJokeApplication.getInstance().getAppComponent();
+        DaggerJokeComponent.builder().appComponent(appComponent).jokeModule(new JokeModule()).build().inject(this);
 
         jokePresenter.attachView(this);
     }

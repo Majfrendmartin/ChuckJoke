@@ -20,14 +20,14 @@ import static com.wildeastcoders.chuckjoke.ChuckJokeApplication.INJECTION_LOG_TA
 public class JokeModule {
 
     @Provides
-//    @PerActivity
+    @PerActivity
     public FetchJokeUsecase provideGetJokeUsecase(Repository repository) {
         Log.d(INJECTION_LOG_TAG, "FetchJokeUsecase Injection");
         return new FetchJokeUsecase(repository);
     }
 
     @Provides
-//    @PerActivity
+    @PerActivity
     public JokePresenter provideJokePresenter(FetchJokeUsecase fetchJokeUsecase) {
         Log.d(INJECTION_LOG_TAG, "JokePresenter Injection");
         return new JokePresenter(fetchJokeUsecase);

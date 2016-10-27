@@ -5,6 +5,7 @@ import com.wildeastcoders.chuckjoke.injectior.module.AppModule;
 import com.wildeastcoders.chuckjoke.injectior.module.JokeModule;
 import com.wildeastcoders.chuckjoke.injectior.module.NetworkModule;
 import com.wildeastcoders.chuckjoke.injectior.scope.PerApplication;
+import com.wildeastcoders.chuckjoke.repositoty.Repository;
 
 import dagger.Component;
 
@@ -15,9 +16,9 @@ import dagger.Component;
 @PerApplication
 @Component(modules = {
         AppModule.class,
-        JokeModule.class,
+//        JokeModule.class,
         NetworkModule.class
 })
 public interface AppComponent {
-    void inject(MainActivity mainActivity);
+    Repository repository();
 }
