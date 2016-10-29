@@ -1,4 +1,4 @@
-package com.wildeastcoders.chuckjoke.repositoty;
+package com.wildeastcoders.chuckjoke.repository;
 
 /**
  * Created by Majfrendmartin on 2016-10-25.

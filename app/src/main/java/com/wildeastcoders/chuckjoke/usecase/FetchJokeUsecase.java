@@ -1,15 +1,9 @@
 package com.wildeastcoders.chuckjoke.usecase;
 
 import com.wildeastcoders.chuckjoke.model.Joke;
-import com.wildeastcoders.chuckjoke.repositoty.IcndbApi;
-import com.wildeastcoders.chuckjoke.repositoty.Repository;
-import com.wildeastcoders.chuckjoke.repositoty.ResponseWrapper;
+import com.wildeastcoders.chuckjoke.repository.Repository;
+import com.wildeastcoders.chuckjoke.repository.ResponseWrapper;
 
-import javax.inject.Inject;
-
-import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
-import retrofit2.converter.gson.GsonConverterFactory;
 import rx.Observable;
 import rx.functions.Func1;
 

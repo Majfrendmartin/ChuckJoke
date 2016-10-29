@@ -1,9 +1,8 @@
-package com.wildeastcoders.chuckjoke.repositoty;
+package com.wildeastcoders.chuckjoke.repository;
 
 import com.wildeastcoders.chuckjoke.model.Joke;
 
 import retrofit2.http.GET;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 import rx.Observable;
 

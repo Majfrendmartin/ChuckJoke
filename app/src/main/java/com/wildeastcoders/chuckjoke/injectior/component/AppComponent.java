@@ -1,11 +1,9 @@
 package com.wildeastcoders.chuckjoke.injectior.component;
 
-import com.wildeastcoders.chuckjoke.MainActivity;
 import com.wildeastcoders.chuckjoke.injectior.module.AppModule;
-import com.wildeastcoders.chuckjoke.injectior.module.JokeModule;
 import com.wildeastcoders.chuckjoke.injectior.module.NetworkModule;
 import com.wildeastcoders.chuckjoke.injectior.scope.PerApplication;
-import com.wildeastcoders.chuckjoke.repositoty.Repository;
+import com.wildeastcoders.chuckjoke.repository.Repository;
 
 import dagger.Component;
 

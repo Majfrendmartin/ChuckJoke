@@ -1,4 +1,4 @@
-package com.wildeastcoders.chuckjoke.repositoty;
+package com.wildeastcoders.chuckjoke.repository;
 
 import com.wildeastcoders.chuckjoke.model.Joke;
 
