@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements JokeView {
     @BindView(R.id.btn_generate)
     Button btnGenerate;
 
-    @OnClick(R.id.btn_generate)
+//    @OnClick(R.id.btn_generate)
     void handleGenerateButtonClicked() {
         jokePresenter.onGenerateJokeButtonClicked(
                 etName.getText().toString(), etSurname.getText().toString());
@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity implements JokeView {
         ButterKnife.bind(this);
         AppComponent appComponent = ChuckJokeApplication.getInstance().getAppComponent();
         DaggerJokeComponent.builder().appComponent(appComponent).jokeModule(new JokeModule()).build().inject(this);
+
+        btnGenerate.setOnClickListener(v -> handleGenerateButtonClicked());
 
         jokePresenter.attachView(this);
     }

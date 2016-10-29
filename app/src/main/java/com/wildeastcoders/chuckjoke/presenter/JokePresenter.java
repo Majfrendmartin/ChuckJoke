@@ -63,19 +63,13 @@ public class JokePresenter implements Presenter<JokeView> {
         getJokeSubscription = fetchJokeUsecase.execute()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .onErrorReturn(new Func1<Throwable, Joke>() {
-                    @Override
-                    public Joke call(Throwable throwable) {
-                        jokeView.showError(throwable.getMessage());
-                        return null;
-                    }
+                .onErrorReturn(throwable -> {
+                    jokeView.showError(throwable.getMessage());
+                    return null;
                 })
-                .subscribe(new Action1<Joke>() {
-                    @Override
-                    public void call(Joke joke) {
-                        if (jokeView != null && joke != null) {
-                            jokeView.showJoke(joke);
-                        }
+                .subscribe(joke -> {
+                    if (jokeView != null && joke != null) {
+                        jokeView.showJoke(joke);
                     }
                 });
     }
