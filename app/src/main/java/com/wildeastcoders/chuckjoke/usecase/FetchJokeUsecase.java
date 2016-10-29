@@ -15,8 +15,8 @@ public class FetchJokeUsecase implements Usecase<Joke> {
 
     private final Repository repository;
 
-    private String firstName;
-    private String lastName;
+    /*package*/ String firstName;
+    /*package*/ String lastName;
 
     public FetchJokeUsecase(final Repository repository) {
         this.repository = repository;
@@ -30,11 +30,6 @@ public class FetchJokeUsecase implements Usecase<Joke> {
     @Override
     public Observable<Joke> execute() {
         return repository.getJoke(firstName, lastName)
-                .map(new Func1<ResponseWrapper<Joke>, Joke>() {
-                    @Override
-                    public Joke call(ResponseWrapper<Joke> jokeResponseWrapper) {
-                        return jokeResponseWrapper.getValue();
-                    }
-                });
+                .map(jokeResponseWrapper -> jokeResponseWrapper.getValue());
     }
 }
