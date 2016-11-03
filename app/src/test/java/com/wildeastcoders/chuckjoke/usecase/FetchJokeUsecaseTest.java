@@ -34,7 +34,7 @@ public class FetchJokeUsecaseTest {
     private Joke joke;
 
     @Before
-    public void before() {
+    public void setUp() {
         MockitoAnnotations.initMocks(this);
         fetchJokeUsecase = new FetchJokeUsecase(repository);
         final ResponseWrapper<Joke> responseWrapper = new ResponseWrapper<>();
